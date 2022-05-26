@@ -50,11 +50,17 @@ class MainStudPage extends Component {
                     const emailRegex = /[a-zA-Z0-9]+[\.]?([a-zA-Z0-9]+)?[\@][a-z]{3,9}[\.][a-z]{2,5}/g;
                         const pattern=emailRegex.test(event.target.value)
                         console.log("pattern=>",pattern)
-                        if(pattern==false){
+                        if(pattern==true){
                         this.setState({
-                            isValid:false,
-                            errorMsgEmail:"Please enter a valid email address!"
+                            isValid:true,
+                            errorMsgEmail:""
                         })
+                        }
+                        else{
+                            this.setState({
+                                isValid:false,
+                                errorMsgEmail:"Please enter a valid email address!"
+                            })
                         }
                     }    
 
@@ -98,7 +104,7 @@ class MainStudPage extends Component {
 
 
   render() {
-      const {showModal,formState,users,inValid,errorMsgEmail}=this.state
+      const {showModal,formState,users,isValid,errorMsgEmail}=this.state
 
     return(
         <>
@@ -154,7 +160,7 @@ class MainStudPage extends Component {
                   name="email"
                   onChange={this.handleOnChange}
                 />
-                {inValid && <span className="error">{errorMsgEmail}</span>}
+                {!isValid && <span className="error">{errorMsgEmail}</span>}
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
