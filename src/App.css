@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.header-margin{
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.register-btn-margin{
+  margin-left: 10px;
+}
+
+.modal-width{
+  width: 100rem;
+}
+
+.errormessage {
+  margin-top:10px;
+}
+
+
+.error {
+  color: red;
+  font-size: 17px; 
+}
+
+.table-setmargin{
+  width: 900px;
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
